@@ -28,11 +28,11 @@
      <div class="container">
          <div class="row">
              <div class="col s12 center align">
-                <img width="150px" src="pexels-photo-1805164.jpeg" alt="" class=" circle responsive-img"/>
+                <img width="250px" src="https://cdn.pixabay.com/photo/2015/03/26/09/54/pug-690566_960_720.jpg" alt="" class=" circle responsive-img"/>
              </div>
              <div class="row">
                 <div class="col s12 center align">
-                  <h2 class="white-text">Jack</h2>
+                  <h2 class="white-text"><%=name%></h2>
                 </div>
 
              
@@ -41,16 +41,19 @@
         <div class="col s4">
             <div class="card-panel red">
                 <span class="white-text">Health</span>
+                <span class="white-text"><%=get('health')%></span>
             </div>
           </div>
           <div class="col s4">
             <div class="card-panel blue">
-                <span class="white-text">purity</span>
+                <span class="white-text">Purity</span>
+                <span class="white-text"><%= get('purity')%></span>
             </div>
           </div>
           <div class="col s4 ">
             <div class="card-panel green ">
                 <span class="white-text">Stamina</span>
+                <span class="white-text"><%= get('stamina')%></span>
             </div>
 
             
@@ -62,16 +65,19 @@
             <div class="col s4">
                 <div class="card-panel indigo">
                     <span class="white-text">Sleeping</span>
+                <span class="white-text"><%=get('sleep')%></span>
                 </div>
               </div>
               <div class="col s4">
                 <div class="card-panel pink">
-                    <span class="white-text">Mood</span>
+                <span class="white-text">Mood</span>
+                <span class="white-text"><%= get('mood')%></span>
                 </div>
               </div>
               <div class="col s4 ">
                 <div class="card-panel orange">
-                    <span class="white-text">Agility</span>
+                  <span class="white-text">Agility</span>
+                  <span class="white-text"><%= get('agility')%></span>
                 </div>
     
                 
@@ -83,33 +89,38 @@
                 <div class="col s4">
                     <div class="card-panel green accent-3">
                         <span class="white-text">Intelect</span>
+                        <span class="white-text"><%= get('intelect')%></span>
                     </div>
                   </div>
                   <div class="col s4">
                     <div class="card-panel cyan">
                         <span class="white-text">Hunger</span>
+                        <span class="white-text"><%= get('hunger')%></span>
                     </div>
                   </div>
                   <div class="col s4 ">
                     <div class="card-panel deep-orange">
                         <span class="white-text">Speed</span>
+                        <span class="white-text"><%= get('speed')%></span>
                     </div>
         
                     
                   </div>
                   
                 </div>
+                <form action = "/change"method = "get">
                 <div class="row align center">
-                    <a class="waves-effect waves-light btn red">feed</a>
-                    <a class="waves-effect waves-light btn blue">wash</a>
-                    <a class="waves-effect waves-light btn pink">play</a>
-                    <a class="waves-effect waves-light btn deep-orange">train</a>
-                    <a class="waves-effect waves-light btn green">walk</a>
-                    <a class="waves-effect waves-light btn indigo">search</a>
-                    <a class="waves-effect waves-light btn orange">spectate</a>  
-                    <a class="waves-effect waves-light btn brown">voice</a>
-                    <a class="waves-effect waves-light btn cyan">sleep</a>                                  
+                    <button class="waves-effect waves-light btn red" name="hunger" value="hunger">feed</button>
+                    <button class="waves-effect waves-light btn blue"name="purity" value="purity">wash</button>
+                    <button class="waves-effect waves-light btn pink" name="mood" value="mood">play</button>
+                    <button class="waves-effect waves-light btn deep-orange"name="stamina" value="stamina">train</button>
+                    <button class="waves-effect waves-light btn green" name="speed" value="speed">walk</button>
+                    <button class="waves-effect waves-light btn indigo"name="intelect" value="intelect">search</button>
+                    <button class="waves-effect waves-light btn orange">spectate</button>  
+                    <button class="waves-effect waves-light btn brown">voice</button>
+                    <button class="waves-effect waves-light btn cyan" name="sleep" value="sleep">sleep</button>                                  
                 </div>
+                </form>
         </div>
         </div>
        </div>
