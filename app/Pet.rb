@@ -1,7 +1,6 @@
 require "erb"
 require './app/lib/controller'
 
-
 class Pet
   include Controller
   def self.call(env)
@@ -9,19 +8,17 @@ class Pet
   end
 
   def initialize(env)
-    
     @req = Rack::Request.new(env)
-    @health = 10
-    @mood = 10
-    @hunger = 10
-    @sleeping = 10
-    @stamina = 10
-    @agility = 10
-    @intelect = 10
-    @purity = 10
-    @speed = 10
+    @health = 50
+    @mood = 50
+    @hunger = 50
+    @sleeping = 50
+    @stamina = 50
+    @agility = 50
+    @intelect = 50
+    @purity = 50
+    @speed = 50
     $stats = %w[health hunger sleeping stamina mood agility intelect purity speed]
-    
   end
 
   #----------user actions----------
@@ -47,10 +44,10 @@ class Pet
 
     when '/exit'
       Rack::Response.new('Game Over', 404)
-      Rack::Response.new(render("over.html.erb"))
+      Rack::Response.new(render("exit.html.erb"))
 
     when '/start'
-      if get("health") <=0 || get("stamina") <= 0 || get("hunger") <= 0 || get("mood") <= 0
+      if get("health") <= 0 || get("stamina") <= 0 || get("hunger") <= 0 || get("mood") <= 0
         Rack::Response.new('Game Over', 404)
         Rack::Response.new(render("game_over.html.erb"))
       else
@@ -59,14 +56,14 @@ class Pet
 
     when '/change'
       return Controller.change_params(@req, 'health') if @req.params['health']
-      return Controller.change_params(@req, 'hunger')   if @req.params['hunger']
-      return Controller.change_params(@req, 'sleep')  if @req.params['sleep']
-      return Controller.change_params(@req, 'mood')  if @req.params['mood']
-      return Controller.change_params(@req, 'stamina')  if @req.params['stamina']
+      return Controller.change_params(@req, 'hunger') if @req.params['hunger']
+      return Controller.change_params(@req, 'sleep') if @req.params['sleep']
+      return Controller.change_params(@req, 'mood') if @req.params['mood']
+      return Controller.change_params(@req, 'stamina') if @req.params['stamina']
       return Controller.change_params(@req, 'agility')   if @req.params['agility']
       return Controller.change_params(@req, 'intelect')  if @req.params['intelect']
-      return Controller.change_params(@req, 'speed')  if @req.params['speed']
-      return Controller.change_params(@req, 'purity')  if @req.params['purity']
+      return Controller.change_params(@req, 'speed') if @req.params['speed']
+      return Controller.change_params(@req, 'purity') if @req.params['purity']
     else
       Rack::Response.new('Not Found', 404)
     end
@@ -85,8 +82,4 @@ class Pet
   def get(attr)
     @req.cookies["#{attr}"].to_i
   end
-
-
-
-        
 end
