@@ -8,7 +8,7 @@
     <!-- Material Icon CDN -->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Materialize CSS CDN -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Your custom styles -->
       <link rel="stylesheet" href="css/style.css">
     <!-- Used as an example only to position the footer at the end of the page.
@@ -108,22 +108,24 @@
                 </div>
                 <form action = "/change"method = "get">
                 <div class="row align center">
-                    <button class="waves-effect waves-light btn red" name="hunger" value="hunger">feed</button>
-                    <button class="waves-effect waves-light btn blue"name="purity" value="purity">wash</button>
-                    <button class="waves-effect waves-light btn pink" name="mood" value="mood">play</button>
-                    <button class="waves-effect waves-light btn deep-orange"name="stamina" value="stamina">train</button>
-                    <button class="waves-effect waves-light btn green" name="speed" value="speed">walk</button>
-                    <button class="waves-effect waves-light btn indigo"name="intelect" value="intelect">search</button>
-                    <button class="waves-effect waves-light btn cyan" name="sleep" value="sleep">sleep</button>                         
+                    <button onclick="M.toast({html: 'feeding'})" class="waves-effect waves-light btn red" name="hunger" value="hunger">feed</button>
+                    <button onclick="M.toast({html: 'washing'})"class="waves-effect waves-light btn blue"name="purity" value="purity">wash</button>
+                    <button onclick="M.toast({html: 'playing'})" class="waves-effect waves-light btn pink" name="mood" value="mood">play</button>
+                    <button onclick="M.toast({html: 'training'})"class="waves-effect waves-light btn deep-orange"name="stamina" value="stamina">train</button>
+                    <button onclick="M.toast({html: 'walking'})"class="waves-effect waves-light btn green" name="speed" value="speed">walk</button>
+                    <button onclick="M.toast({html: 'searching'})" class="waves-effect waves-light btn indigo"name="intelect" value="intelect">search</button>
+                    <button onclick="M.toast({html: 'sleeping'})"class="waves-effect waves-light btn cyan" name="sleep" value="sleep">sleep</button>
+                    <a onclick="M.toast({html: 'Bark Bark'})" class="btn amber">voice</a> 
+                    <a onclick="M.toast({html: 'Spectating'})" class="btn blue-grey lighten-1">spectate</a>                             
                 </div>
                 </form>
-
-                <form action="/exit" method="get">
                 <div class="row align center">
-                <button  class="waves-effect waves-light btn brown" name="exit" value="exit">Exit</button>
-                <button class="waves-effect waves-light btn orange">spectate</button>         
+                <form action="/exit" method="get">
+                <button class="waves-effect waves-light btn brown" name="exit" value="exit">exit</button>
+                </form>   
                 </div>
-                </form>
+                
+                
 
         </div>
         </div>
@@ -133,7 +135,7 @@
     <!-- jQuery CDN -->
       <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <!-- Materialize JS CDN -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     
    
   </body>

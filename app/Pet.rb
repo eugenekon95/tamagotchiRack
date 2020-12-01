@@ -18,7 +18,7 @@ class Pet
     @intelect = 50
     @purity = 50
     @speed = 50
-    $stats = %w[health hunger sleeping stamina mood agility intelect purity speed]
+    #$stats = %w[health hunger sleeping stamina mood agility intelect purity speed]
   end
 
   #----------user actions----------
@@ -50,9 +50,12 @@ class Pet
       if get("health") <= 0 || get("stamina") <= 0 || get("hunger") <= 0 || get("mood") <= 0
         Rack::Response.new('Game Over', 404)
         Rack::Response.new(render("game_over.html.erb"))
+      elsif get("intelect") >= 100 || get("agility") >= 100
+        Rack::Response.new(render("win.html.erb"))
       else
         Rack::Response.new(render("index.html.erb"))
       end
+    
 
     when '/change'
       return Controller.change_params(@req, 'health') if @req.params['health']
@@ -60,8 +63,8 @@ class Pet
       return Controller.change_params(@req, 'sleep') if @req.params['sleep']
       return Controller.change_params(@req, 'mood') if @req.params['mood']
       return Controller.change_params(@req, 'stamina') if @req.params['stamina']
-      return Controller.change_params(@req, 'agility')   if @req.params['agility']
-      return Controller.change_params(@req, 'intelect')  if @req.params['intelect']
+      return Controller.change_params(@req, 'agility') if @req.params['agility']
+      return Controller.change_params(@req, 'intelect') if @req.params['intelect']
       return Controller.change_params(@req, 'speed') if @req.params['speed']
       return Controller.change_params(@req, 'purity') if @req.params['purity']
     else

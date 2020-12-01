@@ -25,7 +25,7 @@ module Controller
         response.set_cookie('purity', req.cookies['purity'].to_i - 5) if req.cookies['purity'].to_i > 0
         response.set_cookie('hunger', req.cookies['hunger'].to_i - 5) if req.cookies['hunger'].to_i > 0
         response.set_cookie('sleep', req.cookies['sleep'].to_i - 5) if req.cookies['sleep'].to_i > 0
-        response.set_cookie('agility', req.cookies['agility'].to_i + 10) if req.cookies['mood'].to_i < 100
+        response.set_cookie('agility', req.cookies['agility'].to_i + 10) if req.cookies['agility'].to_i < 100
         response.set_cookie('intelect', req.cookies['intelect'].to_i + 10) if req.cookies['intelect'].to_i < 100
         response.set_cookie('health', req.cookies['health'].to_i - 5) if req.cookies['health'].to_i > 0
       when 'sleep'
